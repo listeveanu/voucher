@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "74af4331-feea-486c-8e4b-680002dba457",
+		"name": "GSG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3191936"
+	},
+	"item": [
+		{
+			"name": "Add voucher",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "code",
+							"value": "5euro",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "5 euro",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "5 euro voucher",
+							"type": "text"
+						},
+						{
+							"key": "discount_amount",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "expires_at",
+							"value": "2022-12-30",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/vouchers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"vouchers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "purchased_date",
+							"value": "2022-12-20 00:00:00",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "105",
+							"type": "text"
+						},
+						{
+							"key": "voucher_id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/orders",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/orders",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update voucher",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "code",
+							"value": "4euro",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "4 euro",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "4 euro voucher",
+							"type": "text"
+						},
+						{
+							"key": "discount_amount",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "expires_at",
+							"value": "2022-12-11",
+							"type": "text"
+						},
+						{
+							"key": "used",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/vouchers/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"vouchers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete voucher",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/vouchers/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"vouchers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List active vouchers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/vouchers/active",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"vouchers",
+						"active"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List expired vouchers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/vouchers/expired",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"vouchers",
+						"expired"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
