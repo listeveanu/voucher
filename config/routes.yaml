@@ -1,0 +1,39 @@
+voucher_create:
+    path: /api/vouchers
+    controller: App\Controller\VoucherController::createAction
+    methods: [POST]
+
+voucher_update:
+    path: /api/vouchers/{voucherId}
+    controller: App\Controller\VoucherController::updateAction
+    methods: [PUT]
+    requirements:
+        voucherId: '\d+'
+
+voucher_delete:
+    path: /api/vouchers/{voucherId}
+    controller: App\Controller\VoucherController::deleteAction
+    methods: [DELETE]
+    requirements:
+        voucherId: '\d+'
+
+voucher_list_active:
+    path: /api/vouchers/active
+    controller: App\Controller\VoucherController::listActiveAction
+    methods: [GET]
+
+voucher_list_expired:
+    path: /api/vouchers/expired
+    controller: App\Controller\VoucherController::listExpiredAction
+    methods: [GET]
+
+order_create:
+    path: /api/orders
+    controller: App\Controller\OrderController::createAction
+    methods: [POST]
+
+order_list:
+    path: /api/orders/{page}
+    controller: App\Controller\OrderController::listAction
+    methods: [GET]
+    defaults: { page: 1 }
